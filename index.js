@@ -25,8 +25,8 @@ app.post('/todos', async (req, res) => {
     );
     // //await
     // console.log(req.body);
-    res.json(newTodo);
-    
+    res.json(newTodo.row[0]);
+
   }catch(err){
     console.error(err.message);
   }
