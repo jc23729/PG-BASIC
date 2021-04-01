@@ -17,3 +17,4 @@ app.get('/dogs', function(request, response) {
 // \dt —- List all tables (in current db)
 // \d TABLE_NAME — Get details about TABLE_NAME (in current db)
 // \q — Quit psql (can also type <Control-D>)
+// Juans-Air:PG-BASIC juancruz$ psql -U postgres
