@@ -8,6 +8,37 @@ app.get('/dogs', function(request, response) {
     return response.send('Dogs go brk brk');
   });
   
+  // ROUTES 
+
+  // get all todos
+
+  // get a todo
+
+
+  // create a todo
+app.post('/todos', async (req, res) => {
+  try{
+    const {description} = req.body;
+    const newTodo = await pool.query(
+      "INSERT INTO todo (description) VALUES ($1) RETURNING *",
+      [description]
+    );
+    // //await
+    // console.log(req.body);
+    res.json(newTodo);
+    
+  }catch(err){
+    console.error(err.message);
+  }
+});
+
+
+  // update a todo
+
+  // delete a todo 
+
+
+
   app.listen(3000, function(){
     console.log('App on port 3000');
   })
