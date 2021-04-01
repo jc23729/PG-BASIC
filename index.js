@@ -20,11 +20,18 @@ app.get('/dogs', function(request, response) {
       console.log(err.message);
     }
   });
+  
   // get a todo
 
   app.get('/todos/:id', async(req, res) => {
-    // console.log(req.params);
-  })
+    // console.log(req.params.id);
+    const { id } = req.params
+    try {
+      const todos = await pool.query("SELECT * FROM todo WHERE id")
+    }catch(err){
+      console.log(err.message);
+    }
+  });
 
 
   // create a todo
