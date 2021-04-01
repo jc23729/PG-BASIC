@@ -1,5 +1,5 @@
 {
-  "name": "PG-BASIC",
+  "name": "pg-basic",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jc23729/PG-BASIC#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.7",
     "pg": "^8.5.1"
   }
 }
