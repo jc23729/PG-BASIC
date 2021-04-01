@@ -20,14 +20,18 @@ app.get('/dogs', function(request, response) {
       console.log(err.message);
     }
   });
-  
+
   // get a todo
 
   app.get('/todos/:id', async(req, res) => {
     // console.log(req.params.id);
     const { id } = req.params
     try {
-      const todos = await pool.query("SELECT * FROM todo WHERE id")
+      const todos = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [
+        id
+      ]);
+      res.json(todos.rows[0]);
+
     }catch(err){
       console.log(err.message);
     }
@@ -53,6 +57,7 @@ app.post('/todos', async (req, res) => {
 
 
   // update a todo
+  
 
   // delete a todo 
 
