@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const pool = require('./db')
+
+app.use(express.json()); // => req.body (will allow us to get the Json Data )
 
 app.get('/dogs', function(request, response) {
     return response.send('Dogs go brk brk');
