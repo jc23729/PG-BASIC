@@ -11,8 +11,20 @@ app.get('/dogs', function(request, response) {
   // ROUTES 
 
   // get all todos
-
+  app.get('/todos', async(req, res)=> {
+    try {
+      const allTodos = await pool.query(
+        "SELECT * FROM todo");
+        res.json(allTodos.rows);
+    }catch(err){
+      console.log(err.message);
+    }
+  });
   // get a todo
+
+  app.get('/todos/:id', async(req, res) => {
+    // console.log(req.params);
+  })
 
 
   // create a todo
@@ -25,7 +37,7 @@ app.post('/todos', async (req, res) => {
     );
     // //await
     // console.log(req.body);
-    res.json(newTodo.row[0]);
+    res.json(newTodo.rows[0]);
 
   }catch(err){
     console.error(err.message);
