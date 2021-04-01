@@ -4,10 +4,10 @@ const pool = require('./db')
 
 app.use(express.json()); // => req.body (will allow us to get the Json Data )
 
-app.get('/dogs', function(request, response) {
-    return response.send('Dogs go brk brk');
-  });
-  
+// app.get('/dogs', function(request, response) {
+//     return response.send('Dogs go brk brk');
+//   });
+//
   // ROUTES 
 
   // get all todos
@@ -39,7 +39,7 @@ app.get('/dogs', function(request, response) {
 
 
   // create a todo
-app.post('/todos', async (req, res) => {
+app.put('/todos', async (req, res) => {
   try{
     const {description} = req.body;
     const newTodo = await pool.query(
@@ -57,7 +57,7 @@ app.post('/todos', async (req, res) => {
 
 
   // update a todo
-  app.post('/todos/:id', async (req, res) => {
+  app.put('/todos/:id', async (req, res) => {
     try{
       const {id} = req.params; //WHERE
       const {description} = req.body; //SET
@@ -76,7 +76,16 @@ app.post('/todos', async (req, res) => {
   });
 
   // delete a todo 
-
+app.delete('/todos/:id', async (req, res) => {
+  try{
+    const {id} = req.params;
+    const deleteTodo = await pool.query("DELETE FROM todo WHERE todo_id = $1", 
+    [id]);
+    res.json("Todo was deleted successfully");
+  }catch(err){
+    console.error(err.message);
+  }
+})
 
 
   app.listen(3000, function(){
