@@ -70,7 +70,6 @@ app.post('/todos', async (req, res) => {
       // //await
       // console.log(req.body);
       res.json("Todo was updated successfully");
-  
     }catch(err){
       console.error(err.message);
     }
