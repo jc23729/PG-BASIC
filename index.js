@@ -91,6 +91,10 @@ app.delete('/todos/:id', async (req, res) => {
   app.listen(3000, function(){
     console.log('App on port 3000');
   })
+
+
+////////////////NOTES///////////
+
 //touch index.js sets up the file right away in terminal 
 
 
@@ -128,4 +132,62 @@ app.delete('/todos/:id', async (req, res) => {
 // You are now connected to database "test" as user "postgres".
 // Copy to clipboardErrorCopied
 // // Connect to a PostgreSQL database “test” as “postgres” user (psql)
+
+// Tables
+// Show table
+// \d TABLE_NAME
+// Copy to clipboardErrorCopied
+// Show table definition including indexes, constraints & triggers (psql)
+
+// Show details
+// \d+ TABLE_NAME
+// Copy to clipboardErrorCopied
+// // More detailed table definition including description and physical disk size (psql)
+
+// List tables from current schema
+// \dt
+// Copy to clipboardErrorCopied
+// // List tables from current schema (psql)
+
+// List tables from all schemas
+// \dt *.*
+// Copy to clipboardErrorCopied
+// // List tables from all schemas (psql)
+
+// List tables for a schema
+// \dt <name-of-schema>.*
+// Copy to clipboardErrorCopied
+// // List the tables in a specific schema (psql)
+
+// Copy table data to CSV file
+// \copy (SELECT * FROM __table_name__) TO 'file_path_and_name.csv' WITH CSV
+// Copy to clipboardErrorCopied
+// // Export a table as CSV (psql)
+
+// Check indexes for a table using sql
+// SELECT * FROM pg_indexes WHERE tablename='__table_name__' AND
+// schemaname='__schema_name__';
+// Copy to clipboardErrorCopied
+// // Show table indexes (SQL)
+
+// Collects statistics about the contents of tables
+// ANALYZE [__table__]
+// Copy to clipboardErrorCopied
+// // Analyze a table and store the results in the pg_statistic system catalog (SQL)
+
+// With no parameter, ANALYZE examines every table in the current database
+
+// Adding comment on table/column
+// Comment on table employee is 'Stores employee records';
+// Copy to clipboardErrorCopied
+// // Comment on table (SQL)
+
+// Comment on column employee.ssn is 'Employee Social Security Number';
+// Copy to clipboardErrorCopied
+// // Comment on column (SQL)
+
+// Approximate Table Row count / Table Cardinality
+// SELECT reltuples AS card FROM pg_class WHERE relname = '<table_name>';
+// Copy to clipboardErrorCopied
+// // Use this to do fast (but not exact) counts from tables. Helpful if table has millions / billions of records and you just want estimated rows quickly. (SQL)
 
