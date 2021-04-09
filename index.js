@@ -102,3 +102,16 @@ app.delete('/todos/:id', async (req, res) => {
 // \q — Quit psql (can also type <Control-D>)
 // Juans-Air:PG-BASIC juancruz$ psql -U postgres
 
+// Databases
+// List databases
+// \l
+// Copy to clipboardErrorCopied
+// // List all databases using \l (or \list) (psql)
+
+// List databases
+// \l+
+// Copy to clipboardErrorCopied
+// // List all databases using \l+ with more details (including description, tablespace & DB size) (psql)
+
+// Help on CREATE DATABASE command syntax
+// \h CREATE DATABASE
