@@ -115,3 +115,17 @@ app.delete('/todos/:id', async (req, res) => {
 
 // Help on CREATE DATABASE command syntax
 // \h CREATE DATABASE
+
+// Create database
+// CREATE DATABASE mytest;
+// Copy to clipboardErrorCopied
+// // Creates a new database “mytest” (SQL)
+
+// By default, the owner of the database is the current login user.
+
+// Create database
+// \c test
+// You are now connected to database "test" as user "postgres".
+// Copy to clipboardErrorCopied
+// // Connect to a PostgreSQL database “test” as “postgres” user (psql)
+
