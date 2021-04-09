@@ -101,3 +101,4 @@ app.delete('/todos/:id', async (req, res) => {
 // \d TABLE_NAME — Get details about TABLE_NAME (in current db)
 // \q — Quit psql (can also type <Control-D>)
 // Juans-Air:PG-BASIC juancruz$ psql -U postgres
+
